@@ -9,6 +9,6 @@ with open(input, "r") as x:
             for line2 in y:
                 num2 = int(line2.strip())
 
-                if num1 != num2 and num1 + num2 == 2020:
+                if num1 + num2 == 2020:
                     print(num1 * num2)
                     sys.exit()
