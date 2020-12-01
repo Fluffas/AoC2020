@@ -1,18 +1,16 @@
 import sys
-input = sys.argv[1]
+with open(sys.argv[1], "r") as file:
+    input = file.readlines()
 
-with open(input, "r") as x:
-    for line1 in x:
-        num1 = int(line1.strip())
+    for x in input:
+        num1 = int(x.strip())
 
-        with open(input, "r") as y:
-            for line2 in y:
-                num2 = int(line2.strip())
+        for y in input:
+            num2 = int(y.strip())
 
-                with open(input, "r") as z:
-                    for line3 in z:
-                        num3 = int(line3.strip())
+            for z in input:
+                num3 = int(z.strip())
 
-                        if num1 + num2 + num3 == 2020:
-                            print(num1 * num2 * num3)
-                            sys.exit()
+                if num1 + num2 + num3 == 2020:
+                    print(num1 * num2 * num3)
+                    sys.exit("Success")
