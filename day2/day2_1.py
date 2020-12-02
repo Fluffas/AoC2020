@@ -6,12 +6,11 @@ with open(sys.argv[1], "r") as file:
     input = [line.strip() for line in file.readlines()]
 
     for x in input:
-        split = x.split(": ")
-        vals = list(map(int, re.findall(r"\d+", split[0])))
-        letter = split[0][len(split[0])-1]
-        pw = split[1]
+        params, pw = x.split(": ")
+        low, high = map(int, re.findall(r"\d+", params))
+        letter = params[len(params)-1]
 
-        if vals[0] <= pw.count(letter) <= vals[1]:
+        if low <= pw.count(letter) <= high:
             valid += 1
 
 print(valid)
