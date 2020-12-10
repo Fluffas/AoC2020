@@ -9,9 +9,7 @@ with open(sys.argv[1], "r") as file:
     for i in range(1, len(input)):
         cmb = 0
         for j in range(i-3, i):
-            if j < 0:
-                continue
-            if input[j] + 3 >= input[i]:
+            if input[j] + 3 >= input[i] and j >= 0:
                 cmb += temp[j]
         temp.append(cmb)
 
